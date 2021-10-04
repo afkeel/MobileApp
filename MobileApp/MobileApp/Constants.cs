@@ -6,6 +6,6 @@ namespace MobileApp
 {
     public static class Constants
     {
-        public const string DemoMacroscop = "http://demo.macroscop.com/configex?login=root";
+        public const string DemoMacroscop = "http://demo.macroscop.com/configex";
     }
 }
