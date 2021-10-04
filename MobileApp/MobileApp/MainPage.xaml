@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MobileApp.MainPage">
+    <StackLayout Margin="20,35,20,20">
+        <Button Text="Get Data" Command="{Binding LoadDataCommand}" />
+        <CollectionView x:Name="collectionView" ItemsSource="{Binding CamInfo}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Label Text="{Binding Name}"
+                               FontSize="Medium" />
+                        <CheckBox IsChecked="{Binding IsSoundOn}"
+                                  Color="Gray"/>
+                        <Label Text="{Binding AttachedToServer}"
+                               TextColor="Gray"
+                               FontSize="Caption" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
