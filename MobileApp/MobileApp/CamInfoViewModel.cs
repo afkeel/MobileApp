@@ -24,7 +24,7 @@ namespace MobileApp
         {
             HttpClient client = new HttpClient
             {
-                BaseAddress = new Uri(Constants.DemoMacroscop)
+                BaseAddress = new Uri(Constants.Path)
             };
             string userName = "root";
             string passwd = "";
@@ -37,7 +37,6 @@ namespace MobileApp
                 HttpResponseMessage response = await client.GetAsync(client.BaseAddress.AbsoluteUri);
                 if (response.IsSuccessStatusCode)
                 {
-                    // работает только через WiFi!???
                     string content = await response.Content.ReadAsStringAsync();
                     JObject o = JObject.Parse(content);
                     JToken str = o["Channels"];
